@@ -12,6 +12,11 @@
 // Crie um arquivo index.html com uma tag script conectada a um main.js. Organize a lógica de um dos exercícios acima nesse main.js e exiba o resultado usando alert.
 // Peça dois números ao usuário e informe se o primeiro é maior, menor ou igual ao segundo, usando os operadores de comparação.
 
+// Observações
+// Use prompt para entrada, e console.log ou alert para exibir o resultado, conforme fizer mais sentido em cada exercício.
+// Rode os arquivos com o Live Server para garantir que o script carregue corretamente.
+// Não é necessário usar funções ainda, mas quem quiser praticar pode estruturar o código dessa forma.
+
 let userName
 let num_one
 let num_two
@@ -32,57 +37,92 @@ let num_eight
 let num_nine
 
 userName = prompt("Qual é o seu nome?")
-    console.log(`Olá ${userName}!`)
+console.log(`Olá ${userName}!`)
 
 num_one = Number(prompt("Digite um número: "))
 num_two = Number(prompt("Digite outro número: "))
-    console.log(`${num_one} + ${num_two} = ${num_one + num_two}`)
-    console.log(`${num_one} - ${num_two} = ${num_one - num_two}`)
-    console.log(`${num_one} * ${num_two} = ${num_one * num_two}`)
-    console.log(`${num_one} / ${num_two} = ${num_one / num_two}`)
+console.log(`${num_one} + ${num_two} = ${num_one + num_two}`)
+console.log(`${num_one} - ${num_two} = ${num_one - num_two}`)
+console.log(`${num_one} * ${num_two} = ${num_one * num_two}`)
+console.log(`${num_one} / ${num_two} = ${num_one / num_two}`)
 
 age = Number(prompt("Quantos anos você tem?"))
-    if (age >= 18) {
-        console.log("Você é maior de idade.")
-    } else {
-        console.log("Você é menor de idade.")
-    }
+if (age >= 18) {
+    console.log("Você é maior de idade.")
+} else {
+    console.log("Você é menor de idade.")
+}
 
 num_three = Number(prompt("Digite um número: "))
-    if (num_three % 2 === 0) {
-        console.log("Seu número é par.")
-    } else {
-        console.log("Seu número é ímpar")
-    }
+if (num_three % 2 === 0) {
+    console.log("Seu número é par.")
+} else {
+    console.log("Seu número é ímpar")
+}
 
 num_four = Number(prompt("Digite um número: "))
 num_five = Number(prompt("Digite outro número: "))
 num_six = Number(prompt("Digite outro número: "))
-    console.log(`O maior número digitado foi: ${Math.max(num_four, num_five, num_six)}.`)
+console.log(`O maior número digitado foi: ${Math.max(num_four, num_five, num_six)}.`)
 
 note = Number(prompt("Dê uma nota de 0-10 para um aluno: "))
-    if (note >= 6) {
-        console.log("Aprovado :)")
-    } else if (note > 3) {
-        console.log("Recuperação :|")
-    } else {
-        console.log("Reprovado :(")
-    }
+if (note >= 6) {
+    console.log("Aprovado :)")
+} else if (note > 3) {
+    console.log("Recuperação :|")
+} else {
+    console.log("Reprovado :(")
+}
 
 product = prompt("Informe o nome de um produto: ")
-value = prompt("Informe o valor deste produto: ")
+value = Number(prompt("Informe o valor deste produto: "))
 amount = Number(prompt(`Quantas unidades de ${product} você deseja?`))
+
+if (amount > 5) {
+    console.log(`Você ganhou 10% de desconto! O valor total com desconto é: ${(value * amount) * 0.9}`)
+} else {
     console.log(`O valor a ser pago é: ${value * amount}`)
+}
 
 num_six = Number(prompt("Digite um número: "))
 num_seven = Number(prompt("Digite outro número: "))
 operator = prompt("Insira um operador: (+ - * ou /)")
-    console.log(`O valor do primeiro número ${operator} pelo segundo é: ${num_six} ${operator} ${num_seven}`)
 
-birthday = prompt("Informe o ano em que você nasceu: ")
-    if (birthday - 2026 >= 18) {
-        console.log("Você pode tirar a carteira nacional de habilitação.")
-    } else {
-        console.log("Você não pode tirar a carteitra nacional de habilitação.")
-    }
+if (operator === "+") {
+    console.log(`O valor do primeiro número ${operator} pelo segundo é: ${num_six + num_seven}`)
+} else if (operator === "-") {
+    console.log(`O valor do primeiro número ${operator} pelo segundo é: ${num_six - num_seven}`)
+} else if (operator === "*") {
+    console.log(`O valor do primeiro número ${operator} pelo segundo é: ${num_six * num_seven}`)
+} else if (operator === "/") {
+    console.log(`O valor do primeiro número ${operator} pelo segundo é: ${num_six / num_seven}`)
+} else {
+    console.log("Operador inválido")
+}
 
+birthday = Number(prompt("Informe o ano em que você nasceu: "))
+if (2026 - birthday >= 18) {
+    console.log("Você pode tirar a carteira nacional de habilitação.")
+} else {
+    console.log("Você não pode tirar a carteira nacional de habilitação.")
+}
+
+temperature = Number(prompt("Informe a temperatura atual: "))
+if (temperature >= 28) {
+    console.log("O clima está quente!")
+} else if (temperature > 18) {
+    console.log("O clima está ameno!")
+} else {
+    console.log("O clima está frio!")
+}
+
+num_eight = Number(prompt("Digite o primeiro número:"))
+num_nine = Number(prompt("Digite o segundo número:"))
+
+if (num_eight > num_nine) {
+    console.log(`O primeiro número (${num_eight}) é MAIOR que o segundo (${num_nine})`)
+} else if (num_eight < num_nine) {
+    console.log(`O primeiro número (${num_eight}) é MENOR que o segundo (${num_nine})`)
+} else {
+    console.log(`O primeiro número (${num_eight}) é IGUAL ao segundo (${num_nine})`)
+}
